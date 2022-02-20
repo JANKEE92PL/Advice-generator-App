@@ -35,6 +35,12 @@ body .wrapper .container {
           box-shadow: 0px 10px 13px -7px #5f708c, 0px 0px 30px 30px rgba(87, 102, 127, 0.3);
 }
 
+@media screen and (max-width: 1440px) {
+  body .wrapper .container {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 375px) {
   body .wrapper .container {
     width: 90%;
