@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Advice generator app</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Advice ID goes here -->
+      <h1 class="title">Advice # XXX </h1>
+      <blockquote class="advice" id="advice">
+        <q>Advice text goes here</q>
+      </blockquote>
 
-  Advice #<!-- Advice ID goes here -->
+      <img src="images/pattern-divider-desktop.svg" alt="divider" class="divider">
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <div class="spacer"></div>
+      <button class="button"><img src="images/icon-dice.svg" alt="start" class="icon"></button>
+    </div>
+
+    <footer class="footer">
+      Coded by <a href="https://github.com/JANKEE92PL">JANKEE92PL</a>.
+    </footer>
   </div>
+
+  <script src="main.js"></script>
 </body>
+
 </html>
