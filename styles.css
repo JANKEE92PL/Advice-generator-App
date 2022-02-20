@@ -126,7 +126,7 @@ body .wrapper .container .button .icon {
 }
 
 body .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   margin: 40px auto;
   color: #5f708c;
