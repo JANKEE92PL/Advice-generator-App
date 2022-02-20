@@ -18,6 +18,7 @@ $desktop: 1440px
 // Margins / Paddings
 
 $m-40: 40px
+$m-20: 20px
 
 //* Colors
 
@@ -52,20 +53,34 @@ body
             background-color: $grayishBlue
             border-radius: 16px
             width: 50%
-            height: 50vh
             text-align: center
             box-shadow: 0px 10px 13px -7px $grayishBlueLight, 0px 0px 30px 30px rgba(87, 102, 127, .3)
+            @media screen and (max-width: $mobile)
+                width: 90%
+
             .title
                 color: $neonGreen
                 margin: $m-40 auto
                 font-size: $fontsize
+                @media screen and (max-width: $desktop)
+                    font-size: $fontsize / 1.50
+                    margin: 16px 12px
             .advice
                 quotes: "“" "“" "‘" "‘"
                 color: $lightCyan
                 font-size: $fontsize * 2
-                margin: $m-40 auto
+                margin: $m-40 12px
+                @media screen and (max-width: $desktop)
+                    font-size: $fontsize * 1.5
+                @media screen and (max-width: $mobile)
+                    font-size: $fontsize - 6px
             .divider
                 margin: $m-40 auto
+                @media screen and (max-width: $desktop)
+                    margin: $m-20 0 $m-40 0
+                    width: 75%
+            .spacer
+                margin-bottom: 16px
 
             .button
                 position: absolute
@@ -79,17 +94,22 @@ body
                 border-radius: 50%
                 transition: 400ms
                 &:hover
-                    box-shadow: 0px 0px 40px 20px $neonGreen
+                    box-shadow: 0px 0px 30px 10px $neonGreen
+                    filter: grayscale(20%)
                 &:active
                     .icon
-                        transform: rotate(360deg)
+                        // transform: rotate(360deg)
                 .icon
                     text-align: center
                     transition: 500ms
+                @media screen and (max-width: $mobile)
+                    transform: translate(-35px,35px)
+                    width: 70px
+                    height: 70px
     .footer
         position: fixed
         bottom: 0
-        margin: $m-40
+        margin: $m-40 auto
         a
             text-decoration: none
             transition: 500ms
@@ -97,3 +117,9 @@ body
                 color: $neonGreen
             &:hover
                 text-shadow: 0px 0px 20px $neonGreen
+
+@media screen and (max-width: $desktop)
+    /* style changes when the screen gets smaller */
+
+@media screen and (max-width: $mobile)
+        /* And even smaller */
