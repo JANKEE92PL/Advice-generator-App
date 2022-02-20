@@ -7,12 +7,17 @@ $fontsize: 28px
 // Font
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Roboto:wght@400;700&display=swap')
 $family: 'Manrope', sans-serif
+$normal: 400
 $bold: 800
 
 //* Layout
 
 $mobile: 375px
 $desktop: 1440px
+
+// Margins / Paddings
+
+$m-40: 40px
 
 //* Colors
 
@@ -24,6 +29,7 @@ $neonGreen: hsl(150, 100%, 66%) // HEX #52ffa8
 // Neutral
 
 $grayishBlue: hsl(217, 19%, 38%)
+$grayishBlueLight: hsl(217, 19%, 46%) // HEX #0A2857 // RGBA rgba(10, 40, 87, 1)
 $darkGrayishBlue: hsl(217, 19%, 24%)
 
 // ? STYLES
@@ -36,28 +42,58 @@ $darkGrayishBlue: hsl(217, 19%, 24%)
 body
     font-family: $family
     background-color: $darkGrayishBlue
+    .wrapper
+        display: flex
+        margin: 25vh auto
+        align-items: center
+        justify-content: center
+        .container
+            position: relative
+            background-color: $grayishBlue
+            border-radius: 16px
+            width: 50%
+            height: 50vh
+            text-align: center
+            box-shadow: 0px 10px 13px -7px $grayishBlueLight, 0px 0px 30px 30px rgba(87, 102, 127, .3)
+            .title
+                color: $neonGreen
+                margin: $m-40 auto
+                font-size: $fontsize
+            .advice
+                quotes: "“" "“" "‘" "‘"
+                color: $lightCyan
+                font-size: $fontsize * 2
+                margin: $m-40 auto
+            .divider
+                margin: $m-40 auto
 
-    .container
-        background-color: $grayishBlue
-        .title
-            color: $neonGreen
-        .$lightCyan
-            color: $lightCyan
-        .divider
-            background-image: url(/images/pattern-divider-desktop.svg)
-            width: 500px
-            height: 20px
-        .button
-            width: 50px
-            height: 50px
-            border: none
-            cursor: pointer
-            background: $neonGreen
-            border-radius: 50%
-            transition: 400ms
-            &:hover
-                box-shadow: 0px 0px 40px 20px $neonGreen
-
+            .button
+                position: absolute
+                bottom: 0
+                transform: translate(-25px,25px)
+                width: 50px
+                height: 50px
+                border: none
+                cursor: pointer
+                background: $neonGreen
+                border-radius: 50%
+                transition: 400ms
+                &:hover
+                    box-shadow: 0px 0px 40px 20px $neonGreen
+                &:active
+                    .icon
+                        transform: rotate(360deg)
+                .icon
+                    text-align: center
+                    transition: 500ms
     .footer
         position: fixed
         bottom: 0
+        margin: $m-40
+        a
+            text-decoration: none
+            transition: 500ms
+            &:visited
+                color: $neonGreen
+            &:hover
+                text-shadow: 0px 0px 20px $neonGreen
