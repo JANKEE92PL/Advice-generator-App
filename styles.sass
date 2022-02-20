@@ -1,0 +1,54 @@
+//*  Typography
+
+// Body Copy
+
+$fontsize: 28px
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Roboto:wght@400;700&display=swap')
+$family: 'Manrope', sans-serif
+$bold: 800
+
+//* Layout
+
+$mobile: 375px
+$desktop: 1440px
+
+//* Colors
+
+// Primary
+
+$lightCyan: hsl(193, 38%, 86%) // HEX #cee3e9
+$neonGreen: hsl(150, 100%, 66%) // HEX #52ffa8
+
+// Neutral
+
+$grayishBlue: hsl(217, 19%, 38%)
+$darkGrayishBlue: hsl(217, 19%, 24%)
+
+// ? STYLES
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: $family
+
+    .container
+
+        .divider
+            background-image: url(/images/pattern-divider-desktop.svg)
+            width: 500px
+            height: 20px
+        .button
+            width: 50px
+            height: 50px
+            border: none
+            cursor: pointer
+            background: $neonGreen
+            border-radius: 50%
+            transition: 400ms
+            &:hover
+                box-shadow: 0px 0px 40px 20px $neonGreen
