@@ -2,9 +2,11 @@
 let blockquote = document.getElementById("advice");
 let adviceId = document.getElementById("adviceId");
 let button = document.getElementById("button");
+let icon = document.getElementsByClassName("icon")[0];
 const URL = "https://api.adviceslip.com";
+//* ENDPOINTS
+
 const endpoints = {
-  //* ENDPOINTS
   random: "/advice",
   byID: "/advice/{slip_id}",
   bySearch: "/advice/search/{query}",
@@ -16,7 +18,6 @@ const getAdvice = async () => {
   let randomURL = "https://api.adviceslip.com/advice";
   try {
     let response = await fetch(randomURL);
-    console.log(response);
     return await response.json();
   } catch (error) {
     console.log("ERROR: ", error);
@@ -25,7 +26,6 @@ const getAdvice = async () => {
 
 const renderAdvice = async () => {
   let randomAdvice = await getAdvice();
-  console.log("OBJECT => ", randomAdvice);
   blockquote.innerText = randomAdvice.slip.advice;
   adviceId.innerText = randomAdvice.slip.id;
 };
@@ -34,8 +34,12 @@ const createAdvice = () => {
   renderAdvice();
 };
 //* Function Calls
+
 // getAdvice(); // ! WORKS => RETURN JSON FORMAT RESPONSE HERE!
 // renderAdvice(); // ! WORKS
 button.addEventListener("click", (e) => {
+  if (icon.style.transform == "rotate(360deg)") {
+    icon.style.transform = "";
+  } else icon.style.transform = "rotate(360deg)";
   createAdvice();
 });
