@@ -30,7 +30,6 @@ body .wrapper .container {
   background-color: #4e5d73;
   border-radius: 16px;
   width: 50%;
-  height: 50vh;
   text-align: center;
   -webkit-box-shadow: 0px 10px 13px -7px #5f708c, 0px 0px 30px 30px rgba(87, 102, 127, 0.3);
           box-shadow: 0px 10px 13px -7px #5f708c, 0px 0px 30px 30px rgba(87, 102, 127, 0.3);
@@ -46,7 +45,7 @@ body .wrapper .container .advice {
   quotes: "“" "“" "‘" "‘";
   color: #cee3e9;
   font-size: 56px;
-  margin: 40px auto;
+  margin: 40px 12px;
 }
 
 body .wrapper .container .divider {
@@ -102,5 +101,11 @@ body .footer a:visited {
 
 body .footer a:hover {
   text-shadow: 0px 0px 20px #52ffa8;
+}
+
+@media (min-width: 375px) {
+  .footer {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

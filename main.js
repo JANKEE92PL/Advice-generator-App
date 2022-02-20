@@ -1,24 +1,41 @@
+//* VARIABLES
 let blockquote = document.getElementById("advice");
-// blockquote.innerText = "";
-
+let adviceId = document.getElementById("adviceId");
+let button = document.getElementById("button");
 const URL = "https://api.adviceslip.com";
-const params = {
+const endpoints = {
   //* ENDPOINTS
   random: "/advice",
   byID: "/advice/{slip_id}",
   bySearch: "/advice/search/{query}",
 };
 
-const getAdvice = async (url, endpoint) => {
-  let querry = endpoint;
-  endpoint = url + endpoint;
-  fetch(endpoint);
-  await ((response) => {
-    console.log(response.json());
-  });
-};
-const updateAdviceText = (data) => {
-  console.log("DATA: ", data);
+//* Functions Declarations
+
+const getAdvice = async () => {
+  let randomURL = "https://api.adviceslip.com/advice";
+  try {
+    let response = await fetch(randomURL);
+    console.log(response);
+    return await response.json();
+  } catch (error) {
+    console.log("ERROR: ", error);
+  }
 };
 
-let randomAdvice = getAdvice(URL, params.random);
+const renderAdvice = async () => {
+  let randomAdvice = await getAdvice();
+  console.log("OBJECT => ", randomAdvice);
+  blockquote.innerText = randomAdvice.slip.advice;
+  adviceId.innerText = randomAdvice.slip.id;
+};
+const createAdvice = () => {
+  getAdvice();
+  renderAdvice();
+};
+//* Function Calls
+// getAdvice(); // ! WORKS => RETURN JSON FORMAT RESPONSE HERE!
+// renderAdvice(); // ! WORKS
+button.addEventListener("click", (e) => {
+  createAdvice();
+});

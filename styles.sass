@@ -52,7 +52,6 @@ body
             background-color: $grayishBlue
             border-radius: 16px
             width: 50%
-            height: 50vh
             text-align: center
             box-shadow: 0px 10px 13px -7px $grayishBlueLight, 0px 0px 30px 30px rgba(87, 102, 127, .3)
             .title
@@ -63,7 +62,7 @@ body
                 quotes: "“" "“" "‘" "‘"
                 color: $lightCyan
                 font-size: $fontsize * 2
-                margin: $m-40 auto
+                margin: $m-40 12px
             .divider
                 margin: $m-40 auto
 
@@ -97,3 +96,7 @@ body
                 color: $neonGreen
             &:hover
                 text-shadow: 0px 0px 20px $neonGreen
+
+@media screen (max-width: $mobile)
+    .footer
+        display: none
